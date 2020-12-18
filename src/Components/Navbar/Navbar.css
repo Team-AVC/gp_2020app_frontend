@@ -1,0 +1,8 @@
+.navbar {
+  width: 20%;
+  min-width: 150px;
+  background-color: brown;
+  border-top: 2px solid black;
+  color: white;
+  height: 100vh;
+}
