@@ -1,0 +1,30 @@
+.lastvalue {
+  border: 2px solid black;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.value {
+  flex: 0.25;
+}
+
+.lastvalue_details {
+  flex: 0.55;
+}
+
+.image {
+  flex: 0.2;
+}
+
+.lastvalue_details h2 {
+  font-size: 20px;
+  padding-bottom: 5px;
+}
+
+.lastvalue_details h3 {
+  color: rgb(155, 148, 148);
+  font-size: 14px;
+}
