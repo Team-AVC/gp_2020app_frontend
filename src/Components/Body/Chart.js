@@ -1,27 +1,39 @@
-import React, { useState } from "react";
-import { Line } from "react-chartjs-2";
+import React, { useRef } from "react";
+import CanvasJSReact from "../../Assets/canvasjs.react";
+import "./Chart.css";
+import { useDataLayerValue } from "../../ContextAPI/datalayer";
+
+var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 function Chart() {
-  const [chartData, setChartData] = useState({
-    labels: [
-      "Boston",
-      "Worcester",
-      "Springfield",
-      "Lowell",
-      "Cambridge",
-      "New Bedford",
-    ],
-    datasets: [
-      {
-        label: "Population",
-        data: [617594, 181045, 153060, 106519, 105162, 95072],
-      },
-    ],
+  const [{ censordata, activecensor }, dispatch] = useDataLayerValue();
+  const chart = useRef(null);
+
+  var datapoints = censordata.lastreadings.map((reading) => {
+    return {
+      x: reading?.time,
+      y: reading?.value,
+    };
   });
 
+  const options = {
+    data: [
+      {
+        type: "line",
+        dataPoints: datapoints,
+      },
+    ],
+    axisY: {
+      title: activecensor,
+    },
+    axisX: {
+      title: "Time of the Reading( h )",
+    },
+  };
+
   return (
-    <div>
-      <Line data={chartData} />
+    <div className="chart">
+      <CanvasJSChart options={options} ref={chart} />
     </div>
   );
 }

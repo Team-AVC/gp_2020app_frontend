@@ -2,17 +2,23 @@ import "./App.css";
 import Header from "./Components/Header/Header";
 import Navbar from "./Components/Navbar/Navbar";
 import Body from "./Components/Body/Body";
-import { useDataLayerValue } from "./Context API/datalayer";
+import { useDataLayerValue } from "./ContextAPI/datalayer";
 import { useEffect } from "react";
+import { useFetch } from "./CustomHooks/useFetch";
 
 function App() {
+  var censordataurl = "";
+  var censorurl = "";
+
   const [{ activecensor }] = useDataLayerValue();
 
   useEffect(() => {
-    console.log("Active censor changed");
+    // useFetch(censordataurl);
   }, [activecensor]);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    // useFetch(censorurl);
+  }, []);
 
   return (
     <div className="App">

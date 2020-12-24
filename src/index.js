@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { DataLayer } from "./Context API/datalayer";
-import reducer, { initialState } from "./Context API/reducer";
+import { DataLayer } from "./ContextAPI/datalayer";
+import reducer, { initialState } from "./ContextAPI/reducer";
 
 ReactDOM.render(
   <React.StrictMode>
