@@ -21,7 +21,7 @@ function Chart() {
 
   return (
     <div>
-      <Line data={chartData} height="350" width="600" />
+      <Line data={chartData} />
     </div>
   );
 }
