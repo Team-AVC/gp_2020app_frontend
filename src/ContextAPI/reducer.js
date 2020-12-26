@@ -7,7 +7,6 @@ export const initialState = {
     },
     censors: [],
   };
-  
   const reducer = (state, action) => {
     switch (action.type) {
       case "SET_ACTIVECENSOR":
