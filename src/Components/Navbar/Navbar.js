@@ -1,7 +1,7 @@
 import React from "react";
 import "./Navbar.css";
 import Censor from "./Censor";
-import { useDataLayerValue } from "../../Context API/datalayer";
+import { useDataLayerValue } from "../../ContextAPI/datalayer";
 
 function Navbar() {
   const [{ censors }, dispatch] = useDataLayerValue();
