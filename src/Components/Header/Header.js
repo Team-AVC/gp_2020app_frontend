@@ -4,7 +4,7 @@ import "./Header.css";
 function Header() {
   return (
     <div className="header">
-      <h1>This is the Header</h1>
+      <h1>Sensor Monitor</h1>
     </div>
   );
 }
