@@ -1,0 +1,13 @@
+.censor {
+    padding: 10px;
+  }
+  
+  .censor h2 {
+    font-size: 17px;
+  }
+  
+  .censor:hover {
+    cursor: pointer;
+    background-color: #eee;
+    color: black;
+  }
