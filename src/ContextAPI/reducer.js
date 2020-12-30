@@ -6,6 +6,11 @@ export const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case "SET_ACTIVECENSORID":
+      return {
+        ...state,
+        activeCensorid: action.value,
+      };
     case "SET_ACTIVECENSOR":
       return {
         ...state,
@@ -16,15 +21,9 @@ const reducer = (state, action) => {
         ...state,
         censors: action.value,
       };
-    case "SET_ACTIVECENSORID":
-      return {
-        ...state,
-        activeCensorid: action.value,
-      };
     default:
       return state;
   }
 };
 
 export default reducer;
-  

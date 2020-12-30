@@ -3,7 +3,7 @@ import { useDataLayerValue } from "../../ContextAPI/datalayer";
 import "./Censor.css";
 
 function Censor({ title, id }) {
-  const [{ censors, activeCensorid }, dispatch] = useDataLayerValue();
+  const [{ censors }, dispatch] = useDataLayerValue();
 
   const handleClick = () => {
     dispatch({
@@ -13,7 +13,6 @@ function Censor({ title, id }) {
 
     censors?.map((censor) => {
       if (id === censor.sensorId) {
-        console.log(censor);
         dispatch({
           type: "SET_ACTIVECENSOR",
           value: censor,
@@ -30,4 +29,3 @@ function Censor({ title, id }) {
 }
 
 export default Censor;
-
