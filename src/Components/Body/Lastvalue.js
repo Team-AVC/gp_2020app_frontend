@@ -1,20 +1,28 @@
-import React from "react";
-import { useDataLayerValue } from "../../Context API/datalayer";
+import React, { useState } from "react";
+import { useDataLayerValue } from "../../ContextAPI/datalayer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThermometerHalf } from "@fortawesome/free-solid-svg-icons";
+import msToTime from "./OtherFiles/timedifference";
 import "./Lastvalue.css";
 
 function Lastvalue() {
-  const [{ lastreading, activecensor }, dispatch] = useDataLayerValue();
+  const [{ activeCensor }, dispatch] = useDataLayerValue();
+
+  var lastreading =
+    activeCensor?.sensorDatas[activeCensor?.sensorDatas?.length - 1];
+
+  var timedifference = msToTime(new Date() - new Date(lastreading?.timestamp));
 
   return (
     <div className="lastvalue">
-      <FontAwesomeIcon icon={faThermometerHalf} size="30px" />
+      <FontAwesomeIcon icon={faThermometerHalf} className="icon" />
       <div className="lastvalue_details">
-        <h2>Outdoor {activecensor}</h2>
-        <h3>{lastreading.time} Seconds Ago</h3>
+        <h2>Outdoor {activeCensor?.sensorName}</h2>
+        <h3>{timedifference}</h3>
       </div>
-      <h2 className="value">{lastreading.value} F</h2>
+      <h2 className="value">
+        {lastreading?.dataValue} &#176;{activeCensor?.symbol}
+      </h2>
     </div>
   );
 }
