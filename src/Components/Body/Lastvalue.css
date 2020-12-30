@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  font-weight: 100;
 }
 
 .value {
@@ -27,4 +28,8 @@
 .lastvalue_details h3 {
   color: rgb(155, 148, 148);
   font-size: 14px;
+}
+
+.icon {
+  font-size: 40px;
 }

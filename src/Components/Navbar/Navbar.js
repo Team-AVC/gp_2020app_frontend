@@ -10,9 +10,15 @@ function Navbar() {
     <div className="navbar">
       <h1>Censors</h1>
       <hr />
-      {censors.map((censor) => (
-        <Censor key={censor.id} title={censor.title} />
-      ))}
+      {censors.map((censor) => {
+        return (
+          <Censor
+            title={censor.sensorName}
+            key={censor.sensorId}
+            id={censor.sensorId}
+          />
+        );
+      })}
     </div>
   );
 }
